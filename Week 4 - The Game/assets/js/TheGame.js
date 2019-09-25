@@ -1,7 +1,9 @@
-alert("Welkom bij mijn game");
-alert("Je gaat op reis. Hierbij komen een aantal obstakels voor. Zorg dat je de juiste keuze maakt om op jouw einsbestemming te komen!");
+alert("Welkom bij mijn game!");
+alert("Je gaat op reis. Hierbij komen een aantal obstakels voor. Zorg dat je de juiste keuze maakt om op jouw eindbestemming te komen!");
 
-var name = prompt("Wat is je naam?");
+do{
+    var name = prompt("Wat is je naam?");
+}while(name == "");
 
 var answer = prompt("Welkom " + name + "\nWaar gaat jouw reis naar toe? \n\n 1. Bali \n 2. Marokko \n\n(Typ 1 of 2)");
 
@@ -11,12 +13,36 @@ if(answer == 1){
     if(answer == 1){
         answer = prompt("Je hebt gekozen om met het vliegtuig te gaan \nHet is erg druk op het vliegveld en je hebt 2 uur vertraging. \n\nWat wil je gaan doen? \n\n1. Eten halen \n2. Alvast naar de gate gaan en een boek lezen \n\n(Typ 1 of 2)");
         if(answer == 1){
-            alert("Je gaat eten halen bij een restaurant maar het valt verkeerd. Je wordt er heel erg ziek van en kan niet meer op vakantie gaan. \n\nEinde vakantie...");
+            answer = prompt("Je gaat eten halen bij een restaurant maar het valt verkeerd. Je wordt er heel erg ziek. \n Wat ga je doen? \n\n1. Naar de eerste hulp op het vliegveld \n2. Naar de gate gaan \n\n(Typ 1 of 2)");
+            if(answer == 1){
+                answer = prompt("Ze geven je een pilletje tegen de misselijkheid, je voelt je weer beter en je kan weer naar de gate gaan. Als je daar aankomt, kom je er achter dat je je zonnebril op de eerste hulp heb later liggen. \nWat ga je doen? \n\n1. Terug gaan om je zonnebril op te halen \n2. Laten liggen, hij was toch niet zo duur \n\n(Typ 1 of 2)");
+                if(answer == 1){
+                    alert("Je bent terug gelopen voor je zonnebril en heb 'm weer terug. Je loop weer terug naar de gate en komt erachter dat hij alweer gesloten is en je dus je vlucht gemist hebt. \n\nEinde vakantie...");
+                }
+                else if(answer == 2){
+                    answer = prompt("De gate gaan open en je gaat boarden. Je gaat opstijgen en het gordelteken gaat uit, je mag dus weer opstaan. Na een tijdje sta je op om naar het toilet te gaan, als je bijna bij het toilet bent gaat het gordeltekentje weer aan. \nWat doe je? \n\n1. Snel terug lopen om weer in de gordel te gaan \n2. Snel nog naar het toilet gaan, je bent er bijna \n\n(Typ 1 of 2)");
+                    if(answer == 1){
+                        alert("Je bent weer terug in de gordel gegaan en merkt dat er hele heftige turbulentie aankomt. Je bent blij dat je in de gordel bent gegaan. Na een tijdje kan je alsnog naar het toilet. Je reis naar Bali gaat onverstoord door en je vakantie kan beginnen. \n\nFijne vakantie "+name+"!");
+                    }
+                    else if(answer == 2){
+                        alert("Je bent heel eigenwijs toch naar het toilet gegaan, maar het vliegtuig komt in hele heftige turbulentie. Je stoot je hoofd tegen een kastje in het toilet en bent bewusteloos. Het vliegtuig moet een noodstop maken je wordt opgenomen in het ziekenhuis. \nEinde vakantie..");
+                    }
+                    else{
+                        alert("Je hebt geen correct nummer gekozen. Begin opnieuw")
+                    }
+                }
+            }
+            else if(answer == 2){
+                alert("Je ziet er heel erg ziek uit en het personeel ziet dat. Ze willen je niet meer toelaten in het vliegtuig omdat ze bang zijn dat je een besmettelijke ziekte hebt. \nEinde vakantie..")
+            }
+            else{
+                alert("Je hebt geen correct nummer gekozen. Begin opnieuw")
+            }
         }
         else if(answer == 2){
             answer = prompt("Je heb 2 uur lang een boek gelezen en gaat ontspannen het vliegtuig in. \nJe bent een paar uur verder en je bent bijna in Bali. Je moet alleen nog erg nodig naar het toilet. \n\nWat ga je doen? \n\n1. Naar het toilet \n2. Wachten tot je geland bent en op het vliegveld gaan \n\n(Typ 1 of 2)");
             if(answer == 1){
-                alert("Je gaat naar het toilet toe en het vliegtuig komt ineens in hele heftige turbulentie. Je stoot je hoofd tegen een kastje in de wc en bent bewusteloos. Je wordt wakker in het ziekenhuis... In Nederland. \n\n Einde vakantie...");
+                alert("Je gaat naar het toilet toe en het vliegtuig komt ineens in hele heftige turbulentie. Je stoot je hoofd tegen een kastje in het toilet en bent bewusteloos. Je wordt wakker in het ziekenhuis... In Nederland. \n\n Einde vakantie...");
             }
             else if(answer == 2){
                 alert("Je bent geland op Bali! \nAan het einde van de vlucht heb je nog heftige turbulentie gehad, maar jij zat veilig in je gordel. \nJe gaat snel naar het toilet op het vliegveld en daarna kan je vakantie beginnen! \nFijne vakantie " + name + "!");
@@ -40,7 +66,16 @@ if(answer == 1){
                 alert("Je hebt gekozen om wat te gaan eten. \nHet eten is verkeerd gevallen en je bent heel erg ziek geworden.\nDe eerste stop van het cruiseschip ga je er vanaf om naar het ziekenhuis te gaan.\n\nEinde vakantie..");
             }
             else if(answer == 2){
-                alert("Je hebt de hele reis geslapen en bent zonder problemen in Bali aangekomen. \nJe vakantie gaat nu beginnen! \n\nFijne vakantie "+name + "!");
+                answer = prompt("Je hebt heel lang geslapen en het schip komt bij de eerste stop aan. \nWat ga je doen? \n\n1.Van boord af om even een kijkje te nemen in de stad \n2.Op het schip blijven \n\n(Typ 1 of 2)");
+                if(answer == 1){
+                    alert("Je bent van boord gegaan en heb even rond gekeken in de stad. Je wilt weer terug gaan aan boord en dan kom je erachter dat je paspoort en ticket nog op het schip liggen en ze je dus niet meer toelaten \nEinde vakantie..");
+                }
+                else if(answer == 2){
+                    alert("Je bent aan boord gebleven en na 2 uur gaat het schip weer vertrekken, je reis gaat onverstoord door. \nFijne vakantie "+name+"!");
+                }
+                else{
+                    alert("Je hebt geen correct nummer gekozen. Begin opnieuw")
+                }
             }
             else{
                 alert("Je hebt geen correct nummer gekozen. Begin opnieuw")
